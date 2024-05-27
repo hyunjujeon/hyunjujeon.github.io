@@ -1,0 +1,11 @@
+name: Our Checkout Workflow
+on: push
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: actions/checkout
+          ref: v3
+      - run: ls
