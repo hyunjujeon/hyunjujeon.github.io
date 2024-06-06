@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
-files:
-  - source:  /
-    destination: /home/ubuntu/github_action
-    overwrite: yes
 
+files:
+  - source: /
+    destination: /home/ec2-user/deploy-fe
+    overwrite: yes
+file_exists_behavior: OVERWRITE
 permissions:
-  - object: /
-    pattern: "**"
+  - object: /home/ec2-user/deploy-fe
     owner: ubuntu
     group: ubuntu
-
+    mode: 755
 hooks:
-  ApplicationStart:
-    - location: scripts/gh_deploy.sh
+  AfterInstall:
+    - location: deploy.sh
       timeout: 60
-      runas: ubuntu
+      runas: root
