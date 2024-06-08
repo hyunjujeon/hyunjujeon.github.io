@@ -1,9 +1,0 @@
-name: Our Schedule
-on:
-  schedule:
-    - cron: "*/5 * * * *"
-jobs:
-  date:
-    runs-on: ubuntu-latest
-    steps:
-      - run: date
