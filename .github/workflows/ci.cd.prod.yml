@@ -1,5 +1,4 @@
 name: 🚀 Deploy workflow on production environment
-
 on:
   pull_request:
     branche: [main]
