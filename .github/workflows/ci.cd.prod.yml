@@ -1,8 +1,8 @@
 name: 🚀 Deploy workflow on production environment
 
 on:
-  pull_requests:
-    branches: [main]
+  pull_request:
+    branche: [main]
       types: [closed]
 
 jobs:
