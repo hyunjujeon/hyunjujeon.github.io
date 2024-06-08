@@ -5,7 +5,7 @@ on: # Event 감지
       - develop # 해당 브랜치의 푸쉬가 일어날 때 CI/CD를 진행하겠다는 뜻
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       # - name: Checkout source code. # Repo checkout
       #   uses: actions/checkout@v2
@@ -48,7 +48,7 @@ jobs:
 
       - name: Deploy # Deploy to EC2
         run: aws deploy create-deployment
-          --application-name <CodeDeploy어플리케이션이름>
+          --application-name hjcode-deploy
           --deployment-config-name CodeDeployDefault.AllAtOnce
-          --deployment-group-name <CodeDeploy배포그룹이름>
-          --s3-location bucket=<S3버킷이름>,key=build-app.zip,bundleType=zip
+          --deployment-group-name hj-server
+          --s3-location bucket=buckett289,key=build-app.zip,bundleType=zip
